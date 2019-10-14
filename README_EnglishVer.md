@@ -121,10 +121,10 @@ Here, the actual data format is the following json format. Within `{...}`, it be
 
 
 Please note that the data names are abbreviated as shown in the table below.  
-|     data name    | Abbreviation |  
-| :--------------: | :-------: |  
-|  **Action_id**   | **ac_id** |  
-|  **Action_name** |  **ac**   |  
-|  **Result_id**   | **re_id** |  
-| **Result_data**  |  **re**   |  
-|   **comment**    |  **co**   |  
+|     データ名     |  省略形   |
+| :--------------: | :-------: |
+|  **Action_id**   | **ac_id** |
+|   **Action名**   |  **ac**   |
+|  **Result_id**   | **re_id** |
+| **Resultデータ** |  **re**   |
+|   **コメント**   |  **co**   |
