@@ -5,9 +5,10 @@
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
-本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．<span style="color: red; ">RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので、ご注意ください。</span>RSiとRSNPに関しては次のURLでご参照ください。
+本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては次のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの仕様に関しては，次のURLをご参照ください．  
 
-RSiとRSNPに関してURL：http://robotservices.org/
+RSiとRSNPに関してURL：http://robotservices.org/  
+RSNPユニットの仕様：https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md
 
 ~~~text  
 連絡先：  
