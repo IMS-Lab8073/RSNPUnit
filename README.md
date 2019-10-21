@@ -1,11 +1,11 @@
 
 <h1> 多種多様なシステムをRSNP通信可能にする<br>汎用ユニットの開発</h1>  
 
-<h2> サービス利用マニュアル Ver.2.1</h2>
+<h2> サービス利用マニュアル Ver.2.2</h2>
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
-本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては次のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの仕様に関しては，次のURLをご参照ください．  
+本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては次のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの**仕様**に関しては，次のURLをご参照ください．  
 
 RSiとRSNPに関してURL：http://robotservices.org/  
 RSNPユニットの仕様：https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md
@@ -223,6 +223,7 @@ java(jdk)がインストールされたか念のため確認します．以下�
 ~~~text
 Configuretion
 robot_id  = 1  
+robot_pw  = 8073  
 end_point = http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
 send_interval = 10000
 ip_address = 169.254.183.9
@@ -231,7 +232,8 @@ port = 8000
 
 各パラメータの意味は，次のようになっています．  
 
-- **robot_id** ： ロボットの識別ID  
+- **robot_id** ： ロボットの識別ID
+- **robot_wd**：  ロボット固有のパスワード
 - **end_point** ： データを送信するサーバのアドレス  
 - **send_interval** ： 送信時間間隔
 - **ip_address** : RSNPユニット本体のIPアドレス
