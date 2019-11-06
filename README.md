@@ -210,7 +210,7 @@ java(jdk)がインストールされたか念のため確認します．以下�
 
 ### 2.8 propertiesファイルの設定  
 
-2.5節でダウンロードした`"DataLog"`ディレクトリに移動します．  
+前節でダウンロードした`"DataLog"`ディレクトリに移動します．  
 以下のようにコマンドを入力し実行します．  
 `~$ cd ~/RSNPUnit/DataLog/`  
 
@@ -262,7 +262,7 @@ port = 8000
 
 ### 3.2 プログラム実行のデーモン化  
 
-このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要がある．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにする．これをデーモン化という．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
+このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要があります．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにします．これをデーモン化といいます．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
 `~$ sudo rm ~/RSNPUnit/Service/RSNPNotify.service ~/usr/lib/systemd/system/`  
 次に，サービスファイルのリロードをします，次のようにコマンドを入力し実行します．  
 `~$ sudo systemctl daemon-reload`  
@@ -298,7 +298,7 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 
 #### RSNPユニットに接続する  
 
-コンフィグレーションパラメータの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．設定後，RTCをアクティベートにすることで，RSNPユニットに接続することができます．正常に接続できれば，RTCはグリーンになりアクティベート状態になります．  
+コンフィグレーションパラメータの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．設定後，RTCをアクティベートにすることで，RSNPユニットに接続することができます．正常に接続できれば，RTCはグリーンになりアクティベート状態になります．  
 
 <img src="https://user-images.githubusercontent.com/44587055/63647401-b5597180-c75b-11e9-9715-994c98419a74.png" width=45%>  
 
@@ -329,7 +329,7 @@ subscribe topicsには，フォーマットに準拠したデータを入れる�
 <launch>
 ~~~  
 
-また，Config.yamlの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．  
+また，Config.yamlの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
 <div style="page-break-before:always"></div>  
 
@@ -347,7 +347,7 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.6 ミドルウエアを使用していない，Serial通信で接続するケース  
 
@@ -362,7 +362,7 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.7節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.7 状態の確認  
 
