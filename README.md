@@ -285,10 +285,10 @@ port = 8000
 | :-----------------------------: | :----------: |
 | Windows 7,Windows 8, Windows 10 | 1.1.2, 1.2.0 |
 
-次のURLから"RSNPUnitConnectorRTC"をダウンロードをしてください．  
+次のURLから"RSNPUnitConnector Comp"をダウンロードをしてください．  
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-`RSNPUnit\RSNPUnitConnector(RTM_rtc)`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを指定してください．  
+`RSNPUnit/RSNPUnitConnector_RTM_rtc/RSNPUnitConnectorComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．また，テストデータ送信用RTCに`SampleSendTest RTC`を用意してあります．任意のデータをコンフィグレーションパラメータに適用することで`RSNPUnitConnector RTC`に送信することができます．`RSNPUnit/RSNPUnitConnector_RTM_rtc/SampleSendTestComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．  
 
 RSNPUnitConnector RTCの仕様は，次の表のとおりです．  
 
