@@ -1,14 +1,15 @@
 
 <h1> 多種多様なシステムをRSNP通信可能にする<br>汎用ユニットの開発</h1>  
 
-<h2> サービス利用マニュアル Ver.2.2</h2>
+<h2> サービス利用マニュアル Ver.2.3</h2>
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
-本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては次のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの**仕様**に関しては，次のURLをご参照ください．  
+本システムをご利用予定の方は，お手数ですが下記までご連絡ください．また，改善点などのご意見がある方も，下記までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては次のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの**仕様**に関しては，次のURLをご参照ください．各種修正履歴に関しては次のURLをご参照ください．  
 
 RSiとRSNPに関してURL：http://robotservices.org/  
-RSNPユニットの仕様：https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md
+RSNPユニットの仕様：https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md  
+各種修正履歴：https://github.com/SatoshiOkano/RSNPUnit/releases
 
 ~~~text  
 連絡先：  
@@ -111,7 +112,7 @@ USB-typeCに接続した場合
 #### ケース1-Linux，Mac OSの場合  
 
 Linuxを使用している場合，次のコマンドを実行することで，RSNPユニットに接続することができます．  
-`~$ ssh pi@rsnpunit -p 22`  
+`~$ ssh pi@rsnpunit.local -p 22`  
 
 #### ケース2-Windowsの場合
 
