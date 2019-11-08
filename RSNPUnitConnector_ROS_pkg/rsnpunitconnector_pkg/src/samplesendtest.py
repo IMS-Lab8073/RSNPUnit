@@ -6,19 +6,20 @@ from rsnpunitconnector_pkg.msg import send_msg
 
 def publisher():
 
-    # ROS settimg
+    # ROS setting
     rospy.init_node('sendnodesample', anonymous=True)
 
     pub = rospy.Publisher('connection_topic', send_msg, queue_size=50)
     
-    rosrate = rospy.Rate(1) # 0.1[hz]
+    rosrate = rospy.Rate(1) # 1[hz]
 
     count = 0
     
     while not rospy.is_shutdown():
-			# Instantiate send_msg
+			
+	# Instantiate send_msg
         ins_msg = send_msg()
-        #count += 1
+
         result_data_str = str(count)
         time = rospy.get_time()
         time_str = str(time)
