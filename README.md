@@ -1,7 +1,7 @@
 
 <h1> 多種多様なシステムをRSNP通信可能にする<br>汎用ユニットの開発</h1>  
 
-<h2> サービス利用マニュアル Ver.2.3</h2>
+<h2> サービス利用マニュアル Ver.2.4</h2>
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
@@ -264,7 +264,7 @@ port = 8000
 ### 3.2 プログラム実行のデーモン化  
 
 このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要があります．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにします．これをデーモン化といいます．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
-`~$ sudo rm ~/RSNPUnit/Service/RSNPNotify.service ~/usr/lib/systemd/system/`  
+`~$ sudo cp ~/RSNPUnit/Service/RSNPNotify.service ~/usr/lib/systemd/system/`  
 次に，サービスファイルのリロードをします，次のようにコマンドを入力し実行します．  
 `~$ sudo systemctl daemon-reload`  
 起動します，次のようにコマンドを入力し実行します．  
@@ -289,7 +289,7 @@ port = 8000
 次のURLから"RSNPUnitConnector Comp"をダウンロードをしてください．  
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-`RSNPUnit/RSNPUnitConnector_RTM_rtc/RSNPUnitConnectorComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．また，テストデータ送信用RTCに`SampleSendTest RTC`を用意してあります．任意のデータをコンフィグレーションパラメータに適用することで`RSNPUnitConnector RTC`に送信することができます．`RSNPUnit/RSNPUnitConnector_RTM_rtc/SampleSendTestComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．  
+`RSNPUnit/RSNPUnitConnector_RTM_rtc/RSNPUnitConnectorComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．また，テストデータ送信用RTCとして`SampleSendTest RTC`を用意してあります．任意のデータをコンフィグレーションパラメータに適用することで`RSNPUnitConnector RTC`に送信することができます．`RSNPUnit/RSNPUnitConnector_RTM_rtc/SampleSendTestComp`内に`RSNPUnitConnector.py`があるので，RTCを起動するにはこのpyファイルを実行してください．  
 
 RSNPUnitConnector RTCの仕様は，次の表のとおりです．  
 
@@ -307,7 +307,7 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 
 ### 3.4 ROSでの接続を行うケース  
 
-ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はRSNPUnitConnector，ノード名もRSNPUnitConnectorとなります．  
+ロボットまたはデバイスがROSを実装している場合，こちらのケースでRSNPユニットと接続することを推奨します．Socket通信を用いてRSNPユニットと接続します．パッケージ名はrsnpunitconnector_pkg，ノード名はrsnpunitconnectorとなります．  
 
 <img src="https://user-images.githubusercontent.com/44587055/63647169-197a3680-c758-11e9-946c-e9c56fe8ace9.png" width=50%>  
 
@@ -315,22 +315,14 @@ SampleDataIn(Inport)には，フォーマットに準拠したデータを送る
 | :-----------------------------: | :----------: |
 | Ubuntu 16.04, Ubuntu18.04 | Kinetic, Melodic |
 
-次のURLから"RSNPUnitConnector"をダウンロードをしてください．
+次のURLから"rsnpunitconnector"をダウンロードをしてください．
 https://github.com/SatoshiOkano/RSNPUnit.git  
 
-subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．  
+`rsnpunitconnector_pkg/src`内に`rsnpunitconnector.py`があるので，nodoを起動するにはこのpyファイルを実行してください．また，テストデータ送信用nodeとして`samplesendtest`を用意してあります．現状，カウントと時刻のデータを出力する仕様となっています．実装する際にはそちらを参考にしてください．また，`rsnpunitconnector_pkg/msg`内では，msgファイルを定義していますが，string型の`message_data`となっています．subscribe topicsには，フォーマットに準拠したデータを入れる必要があります．フォーマットに関しては，"4章 通信データ仕様"に記しているので，参照してください．また，String型のmsgを設けていますが，最終的にフォーマットに準拠したデータを出力できれば，他に作成し直して構いません．Python言語で作成してあります．  
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでnodeを起動するために，次のようにroslaunchのXMLファイルを記述する必要があります．  
-
-~~~text
-<launch>
-    <rosparam command="load" file="$ ~/RSNPUnit/RSNPUnitConnector(ROS_pkg)/Config.yaml" >
-<launch>
-~~~  
-
-また，Config.yamlの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
+`rsnpunitconnector_pkg/src`内に`config.ini`があるので，RSNPユニットに接続するためにはそれを編集します．設定したパラメータでプログラムを実行するためにconfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
 <div style="page-break-before:always"></div>  
 

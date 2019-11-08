@@ -23,7 +23,7 @@ def connection_config():
 		#msg_data = ins_msg.message_data
 
 def ros_process():
-		rospy.init_node('ranpunitconnector', anonymous=True)
+		rospy.init_node('rsnpunitconnector', anonymous=True)
 		rospy.Subscriber('connection_topic', send_msg, callback)
 		rospy.spin()
 
