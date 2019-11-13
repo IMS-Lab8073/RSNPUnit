@@ -265,9 +265,9 @@ port = 8000
 ### 3.2 プログラム実行のデーモン化  
 
 このままだと，RSNPユニットを動作する際に，毎回ログインを行い，コマンドを入力し実行する必要があります．そこで，プログラム実行を，RSNPユニットに電源を投入した際に自動で行うようにします．これをデーモン化といいます．ここでは，デーモン化の設定を行います．まず，サービスファイルの作成を行います．ただ，今回は既に作成してあるファイルを特定のディレクトリに移動するだけです．次のように，コマンドを入力し実行します．  
-`~$ sudo cp ~/RSNPUnit/Service/rsnpnotifi.service ~/etc/systemd/system/`  
+`~$ sudo cp ~/RSNPUnit/Service/rsnpnotifi.service /etc/systemd/system/`  
 また，起動用のshファイルをコピーします．
-`~$ sudo cp ~/RSNPUnit/Service/Running.sh ~/home/pi/`  
+`~$ sudo cp ~/RSNPUnit/Service/Running.sh /home/pi/`  
 次に．サービスファイルの登録を行います．  
 `~$ sudo systemctl enable rsnpnotifi.service`  
 次に，サービスファイルのリロードをします，次のようにコマンドを入力し実行します．  
