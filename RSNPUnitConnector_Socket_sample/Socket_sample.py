@@ -29,18 +29,14 @@ def main():
     Socket_client.connect((IPaddress, Port))
 
     # inicialize result data
-    result_data = "null"
+    result_data = "hoge"
 
     # setting of json format data to send RSNPUnit
-    send_data = '{"data": [{"ac_id": "1", "ac": "robot_state", "re_id": "1", "re": "moving", "co": ""}]}'
+    send_data = '{"data": [{"ac_id": "1", "ac": "robot_state", "re_id": "1", "re": '+result_data+', "co": ""}]}'
 
     while True:
 
         time.sleep(5)  #5s interval
-
-        # If you would like to use Python ver.2, please write to change this sentense.
-        # send_sample_data_str.encode("utf-8")
-        # Socket_client.send()
         
         # send data to RSNPUnit by Socket communication
         Socket_client.send(send_data)
