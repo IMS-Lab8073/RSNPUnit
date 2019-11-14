@@ -4,7 +4,6 @@ After = network.target
 
 [Service]
 ExecStart = sh /home/pi/Running.sh
-Restart = always
 Type = simple
 Restart = on-failure
 RestartSec = 20

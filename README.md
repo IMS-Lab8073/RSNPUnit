@@ -237,7 +237,7 @@ port = 8000
 - **robot_id** ： ロボットの識別ID
 - **robot_wd**：  ロボット固有のパスワード
 - **end_point** ： データを送信するサーバのアドレス  
-- **send_interval** ： 送信時間間隔
+- **send_interval** ： 送信時間間隔,単位は[ms]
 - **ip_address** : RSNPユニット本体のIPアドレス
 - **port** ： Socket通信のポート番号  
 
