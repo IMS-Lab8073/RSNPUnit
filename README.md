@@ -1,7 +1,7 @@
 
 <h1> 多種多様なシステムをRSNP通信可能にする<br>汎用ユニットの開発</h1>  
 
-<h2> サービス利用マニュアル Ver.2.５</h2>
+<h2> サービス利用マニュアル Ver.2.5</h2>
 
 <h4> 芝浦工業大学 知能機械システム研究室　岡野　憲，松日楽　信人</h4>
 
@@ -259,6 +259,7 @@ port = 8000
 
 次に，実行するために以下のようにコマンドを入力します．  
 `~$ java -jar RSNPNotifi.jar`  
+※現状，jdk1.8以下で動作します．jdk10以上では動作しませんのでご注意ください．  
 
 停止するときは，"Ctrl"+"c"キーを入力することで停止します．  
 
@@ -326,7 +327,7 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-`rsnpunitconnector_pkg/src`内に`config.ini`があるので，RSNPユニットに接続するためにはそれを編集します．設定したパラメータでプログラムを実行するためにconfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
+`rsnpunitconnector_pkg/src`内に`config.ini`があるので，RSNPユニットに接続するためにはそれを編集します．設定したパラメータでプログラムを実行するためにconfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
 <div style="page-break-before:always"></div>  
 
@@ -344,7 +345,7 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
 
 ### 3.6 ミドルウエアを使用していない，Serial通信で接続するケース  
 
@@ -359,9 +360,25 @@ https://github.com/SatoshiOkano/RSNPUnit.git
 
 #### RSNPユニットに接続する  
 
-設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"SocketPort"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．  
 
-### 3.7 状態の確認  
+### 3.7 RSNPユニットハードを使わないケース  
+
+本システムはRSNPユニットを外付けすることで容易にRSNP通信できます．しかし，ユニットハードを用いなくても，PC上でRSNPNotifi.jarを実行し，それにSocket通信でデータ送信することで，RSNP通信できます．  
+
+<img src="https://user-images.githubusercontent.com/44587055/68920189-d9a37800-07b7-11ea-9419-a63dbe55434b.png" width=60%>  
+
+次のURLからサンプルソースコードをダウンロードをしてください．
+https://github.com/SatoshiOkano/RSNPUnit.git  
+
+`RSNPUnit`内の`RSNPNotifi.jar`がメインの実行ファイルととなります．実行するために以下のようにターミナルまたはコマンドプロンプト等でコマンドを入力します．  
+`~$ java -jar RSNPNotifi.jar`  
+
+#### RSNPユニットに接続する  
+
+設定したパラメータでプログラムを実行するためにConfig.iniの"IPaddress"と"Port"は，"2.8節 propertiesファイルの設定"と同じ値に設定する必要があります．"IPaddress"はローカルホストである"127.0.0.1"で接続することを推奨します．  
+
+### 3.8 状態の確認  
 
 ロボットまたはデバイスからRSNPユニットにデータを送信すると，RSNPでサーバに送信されます．
 サーバにアクセスすることでWebブラウザ上に状態が反映されているか確認することができます．  
@@ -372,8 +389,8 @@ http://robots.aiit.ac.jp:8080/Robomech2019/
 以下のようにブラウザ上で表示されていれば，確認完了です．  
 今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
 
-robot_id=2のロボットを稼働させた例を下の図に示す．  
-<img src="https://user-images.githubusercontent.com/44587055/58847016-4caeab80-86bc-11e9-9b39-e87f95fe140a.png" width=60%>  
+"robot_id"=1のロボットで"result"="test_string"を送信した例を下の図に示す．  
+<img src="https://user-images.githubusercontent.com/44587055/68925161-ce574900-07c5-11ea-93fb-5263e5ad1dc5.png" width=60%>  
 
 他にもロボットの画像に差し替えたり，表示するデータの種類も変更して表示情報を変更することができます．  
 
