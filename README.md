@@ -276,7 +276,7 @@ port = 8000
 起動します，次のようにコマンドを入力し実行します．  
 `~$ sudo systemctl start rsnpnotifi.service`  
 サービスが動いているか確認します．次のようにコマンドを入力し実行します．  
-`~$ sudo systemctl status rsnpnotify.service`  
+`~$ sudo systemctl status rsnpnotifi.service`  
 これでデーモン化は完了です．  
 
 ### 3.3 RTミドルウエアでの接続を行うケース  
