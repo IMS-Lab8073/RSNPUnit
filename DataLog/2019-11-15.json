@@ -1,2 +1,0 @@
-{"time":"15:57:05","data":[{"ac_id":1,"ac":"sensorstatus","re_id":1,"re":"test_string","co":"test"},{"ac_id":2,"ac":"robot1_state1","re_id":2,"re":3,"co":"test"},{"ac_id":3,"ac":"sensorstatus","re_id":3,"re":"off","co":"test"}]}
-{"time":"15:57:10","data":[{"ac_id":1,"ac":"sensorstatus","re_id":1,"re":"test_string","co":"test"},{"ac_id":2,"ac":"robot1_state1","re_id":2,"re":3,"co":"test"},{"ac_id":3,"ac":"sensorstatus","re_id":3,"re":"off","co":"test"}]}

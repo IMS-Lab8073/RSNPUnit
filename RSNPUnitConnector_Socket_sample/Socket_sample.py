@@ -17,8 +17,8 @@ def main():
     config.read("./Config.ini")
 
     # reading parameter of Config.ini
-    IPaddress = config['Settings']['IPaddress']
-    Port = config['Settings']['Port']
+    IPaddress = config.get('Settings','IPaddress')
+    Port = config.get('Settings','Port')
     Port = int(Port)
     print("IPaddr = [{}] Port = [{}]".format(IPaddress, Port))
 
@@ -29,7 +29,7 @@ def main():
     Socket_client.connect((IPaddress, Port))
 
     # inicialize result data
-    result_data = "hoge"
+    result_data = '"hoge"'
 
     # setting of json format data to send RSNPUnit
     send_data = '{"data": [{"ac_id": "1", "ac": "robot_state", "re_id": "1", "re": '+result_data+', "co": ""}]}'
