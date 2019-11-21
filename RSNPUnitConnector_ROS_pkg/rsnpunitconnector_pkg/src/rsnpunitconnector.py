@@ -12,8 +12,8 @@ def connection_config():
     # read Config.ini
 		config_par.read("config.ini")
 		# reading parameter of Config.ini
-		ipaddress = config_par['Settings']['IPaddress']
-		port = config_par['Settings']['Port']
+		ipaddress = config_par.get('Settings','IPaddress')
+		port = config_par.get('Settings','Port')
 		port = int(port)
 
 		return ipaddress, port
