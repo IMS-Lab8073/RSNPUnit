@@ -278,6 +278,13 @@ port = 8000
 サービスが動いているか確認します．次のようにコマンドを入力し実行します．  
 `~$ sudo systemctl status rsnpnotifi.service`  
 これでデーモン化は完了です．  
+deamon.log が大容量になることがあるので、ログ機能をオフにします．  
+`~$ sudo nano /etc/rsyslog.conf`  
+この conf ファイル内の記述を変更します．  
+`daemon.* -/var/log/daemon.log`  
+この記述を探し，コメントアウトします．  
+`#daemon.* -/var/log/daemon.log`  
+ファイルを保存し終了します．  
 
 ### 3.3 RTミドルウエアでの接続を行うケース  
 
